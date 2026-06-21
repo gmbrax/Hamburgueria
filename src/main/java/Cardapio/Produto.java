@@ -3,7 +3,7 @@ package Cardapio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Produto {
+public class Produto  implements Cloneable{
     private String nome;
     private CategoriaProduto categoria;
     private double precoBase;
@@ -34,5 +34,12 @@ public class Produto {
 
     public void AddIngredientes(Ingrediente ingrediente){
         this.ingredientes.add(ingrediente);
+    }
+
+    @Override
+    public Produto clone() throws CloneNotSupportedException {
+        Produto Clone = (Produto) super.clone();
+        Clone.ingredientes = new ArrayList<>(this.ingredientes);
+        return Clone;
     }
 }

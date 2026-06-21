@@ -15,7 +15,13 @@ public class Cardapio {
     }
 
     public Produto getProduto(String nome){
-        return this.produtos.get(nome);
+        Produto produto = this.produtos.get(nome);
+        if(produto == null){return null;}
+        try{
+            return produto.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException("Erro ao clonar produto", e);
+        }
     }
 
     public void addProduto(Produto produto){

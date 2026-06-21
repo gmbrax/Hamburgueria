@@ -38,5 +38,11 @@ public abstract class PedidoEstado {
         return false;
     }
 
+    public boolean adicionarItem(Pedido pedido, ItemPedido item) {
+        return false;
+    }
 
+    public boolean removerItem(Pedido pedido, ItemPedido item) {
+            return false;
+    }
 }

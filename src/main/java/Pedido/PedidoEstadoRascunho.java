@@ -24,6 +24,17 @@ public class PedidoEstadoRascunho extends PedidoEstado{
         return true;
     }
 
+    @Override
+    public boolean adicionarItem(Pedido pedido, ItemPedido item) {
+        pedido.adicionarAoCarrinho(item);
+        return true;
+    }
+
+    @Override
+    public boolean removerItem(Pedido pedido, ItemPedido item) {
+        pedido.removerDoCarrinho(item);
+        return true;
+    }
 
     @Override
     public String getEstado() {
