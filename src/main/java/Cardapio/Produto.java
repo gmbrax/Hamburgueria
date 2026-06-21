@@ -36,6 +36,10 @@ public class Produto  implements Cloneable{
         this.ingredientes.add(ingrediente);
     }
 
+    public void removeIngrediente(Ingrediente ingrediente){
+        this.ingredientes.remove(ingrediente);
+    }
+
     @Override
     public Produto clone() throws CloneNotSupportedException {
         Produto Clone = (Produto) super.clone();
