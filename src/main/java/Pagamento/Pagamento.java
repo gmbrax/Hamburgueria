@@ -1,0 +1,27 @@
+package Pagamento;
+
+public class Pagamento {
+
+    private PagamentoEstado estado;
+
+    public Pagamento(){
+        this.estado = PagamentoEstadoAguardando.getInstance();
+    };
+
+    public void setEstado(PagamentoEstado estado){
+        this.estado = estado;
+    }
+
+    public boolean pagar(){
+        return estado.pagar(this);
+    }
+
+    public boolean estornar(){
+        return estado.estornar(this);
+    }
+
+    public boolean cancelar(){
+        return estado.cancelar(this);
+    }
+
+}
