@@ -92,4 +92,9 @@ public class Pedido {
         }
         return soma;
     }
+
+    public boolean estornar(){
+        return estado.estornar(this);
+    }
+
 }
