@@ -4,7 +4,7 @@ public abstract class PagamentoEstado {
 
     public abstract String getEstado();
 
-    public boolean pagar(Pagamento pagamento){
+    public boolean pagar(Pagamento pagamento, String formaPagamento){
         return false;
     };
 

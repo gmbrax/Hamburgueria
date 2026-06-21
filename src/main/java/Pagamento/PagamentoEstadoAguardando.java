@@ -18,9 +18,13 @@ public class PagamentoEstadoAguardando  extends PagamentoEstado{
         return "Aguardando Pagamento";
     }
 
-    public boolean pagar(Pagamento pagamento){
-        pagamento.setEstado(PagamentoEstadoPago.getInstance());
-        return true;
+    public boolean pagar(Pagamento pagamento, String formaPagamento){
+        EstrategiaPagamento estrategia = EstrategiaPagamentoFactory.obter(formaPagamento);
+        boolean statusPagamento = estrategia.processar(pagamento);
+        if(statusPagamento){
+            pagamento.setEstado(PagamentoEstadoPago.getInstance());
+        }
+        return statusPagamento;
     }
 
     public boolean cancelar(Pagamento pagamento){

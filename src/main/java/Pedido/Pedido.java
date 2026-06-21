@@ -52,12 +52,12 @@ public class Pedido {
         return estado.finalizar(this);
     }
 
-    public boolean pagar(){
-        return estado.pagar(this);
+    public boolean pagar(String formaPagamento){
+        return estado.pagar(this,formaPagamento);
     }
 
-    public boolean executarPagamento(){
-        return pagamento.pagar();
+    public boolean executarPagamento(String formaPagamento){
+        return pagamento.pagar(formaPagamento);
     }
 
     public boolean executarEstorno() {

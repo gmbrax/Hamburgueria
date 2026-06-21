@@ -21,8 +21,8 @@ public class PedidoEstadoAguardandoPagamento extends PedidoEstado{
         return true;
     }
 
-    public boolean pagar(Pedido pedido){
-        boolean statusPagamento =  pedido.executarPagamento();
+    public boolean pagar(Pedido pedido, String formaPagamento){
+        boolean statusPagamento =  pedido.executarPagamento(formaPagamento);
         if(statusPagamento){
             pedido.setEstado(PedidoEstadoEnviadoCozinha.getInstance());
         }

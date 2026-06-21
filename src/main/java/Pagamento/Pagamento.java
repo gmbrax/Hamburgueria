@@ -6,14 +6,14 @@ public class Pagamento {
 
     public Pagamento(){
         this.estado = PagamentoEstadoAguardando.getInstance();
-    };
+    }
 
     public void setEstado(PagamentoEstado estado){
         this.estado = estado;
     }
 
-    public boolean pagar(){
-        return estado.pagar(this);
+    public boolean pagar(String formaPagamento){
+        return estado.pagar(this,formaPagamento);
     }
 
     public boolean estornar(){

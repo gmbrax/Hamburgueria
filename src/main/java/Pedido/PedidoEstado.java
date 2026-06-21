@@ -26,7 +26,7 @@ public abstract class PedidoEstado {
         return false;
     }
 
-    public boolean pagar(Pedido pedido) {
+    public boolean pagar(Pedido pedido, String formaPagamento) {
         return false;
     }
 
