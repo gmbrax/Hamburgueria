@@ -1,6 +1,8 @@
 package Sistema;
 
 import Autorizacao.*;
+import Painel.PainelCliente;
+import Painel.PainelCozinha;
 import Pedido.Pedido;
 import Pedido.ItemPedido;
 
@@ -27,6 +29,13 @@ public class SistemaPedidos {
         return instance;
     }
 
+
+    public Pedido criarPedido(){
+        Pedido pedido = new Pedido();
+        pedido.addObserver(new PainelCozinha());
+        pedido.addObserver(new PainelCliente());
+        return pedido;
+    }
 
     public boolean iniciarPreparo(Pedido pedido, PapelFuncionario papel){
         if (correnteAutorizacao.autorizar(papel, AcaoPedido.INICIAR_PREPARO)) {

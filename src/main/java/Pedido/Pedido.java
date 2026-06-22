@@ -5,11 +5,12 @@ import com.fasterxml.uuid.Generators;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.UUID;
 
 import Pagamento.Pagamento;
 
-public class Pedido {
+public class Pedido extends Observable {
     private UUID id;
     private PedidoEstado estado;
     private Pagamento pagamento = null;
@@ -23,6 +24,8 @@ public class Pedido {
 
     public void setEstado(PedidoEstado estado){
         this.estado = estado;
+        setChanged();
+        notifyObservers(estado);
     }
 
     public void criarPagamento(){
