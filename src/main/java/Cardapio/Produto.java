@@ -3,7 +3,7 @@ package Cardapio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Produto  implements Cloneable{
+public class Produto  implements Cloneable, ItemCardapio{
     private String nome;
     private CategoriaProduto categoria;
     private double precoBase;
@@ -14,6 +14,11 @@ public class Produto  implements Cloneable{
         this.categoria = categoria;
         this.nome = nome;
         this.precoBase = precoBase;
+    }
+
+    @Override
+    public double getPreco() {
+        return this.precoBase;
     }
 
     public String getNome() {
